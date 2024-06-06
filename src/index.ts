@@ -2,6 +2,7 @@ import express, { Request, Response }  from "express";
 import cors from "cors";
 import "dotenv/config";
 import mongoose from "mongoose";
+import UserRoute from "./routes/UserRoutes"
 
 
 mongoose.connect(process.env.MONGODB_CONNECTION as string)
@@ -12,9 +13,7 @@ const app = express();
 app.use(express.json())
 app.use(cors())
 
-app.get('/test', async (req:Request , res:Response) => {
-        res.json({message:"Hello"})
-})
+app.use('/api/user',UserRoute)
 
 
 app.listen(3000,()=>{
