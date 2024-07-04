@@ -3,6 +3,7 @@ import { User } from "../models/user";
 
 export const createUser = async (req: Request, res: Response) => {
   try {
+    console.log("hitting create user")
     const { authId } = req.body;
     const existingUser = await User.findOne({ authId });
 
@@ -22,10 +23,12 @@ export const createUser = async (req: Request, res: Response) => {
 
 export const updateUser = async (req: Request, res: Response) => {
   try {
+    console.log("hitting update user")
     const { name, address1, city, country } = req.body;
     const user = await User.findById(req.userId);
 
     if (!user) {
+      console.log("User not found")
       return res.status(404).json({ message: "User not found" });
     }
 
