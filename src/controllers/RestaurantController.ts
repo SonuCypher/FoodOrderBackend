@@ -5,6 +5,7 @@ import mongoose from "mongoose";
 
 export const createMyRestaurant = async (req: Request, res: Response) => {
   try {
+    console.log("hitting createMyRestaurant")
     const existingRestaurant = await Restaurant.findOne({ user: req.userId });
 
     if (existingRestaurant) {

@@ -8,6 +8,7 @@ const handleValidationErrors = async (
 ) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
+    console.error(errors)
     return res.status(400).json({ errors: errors.array() });
   }
   next();
@@ -25,7 +26,7 @@ export const validateUserRequest = [
 ];
 
 export const validateMyRestauranRequest = [
-  body("name").notEmpty().withMessage("Restaurant name is required"),
+  body("restaurantName").notEmpty().withMessage("Restaurant name is required"),
   body("city").notEmpty().withMessage("City name is required"),
   body("country").notEmpty().withMessage("City name is required"),
   body("deliveryPrice")
