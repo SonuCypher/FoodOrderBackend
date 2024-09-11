@@ -3,6 +3,7 @@ import multer from "multer";
 import {
   createMyRestaurant,
   getMyRestaurant,
+  updateMyRestaurant,
 } from "../controllers/RestaurantController";
 import { jwtCheck, jwtParse } from "../middleware/auth";
 import { validateMyRestauranRequest } from "../middleware/validation";
