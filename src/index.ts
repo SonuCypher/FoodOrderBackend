@@ -3,7 +3,7 @@ import cors from "cors";
 import "dotenv/config";
 import mongoose from "mongoose";
 import UserRoute from "./routes/UserRoutes";
-import RestaurantRoute from "./routes/RestaurantRoutes";
+import MyRestaurantRoute from "./routes/MyRestaurantRoutes";
 import { v2 as cloudinary } from "cloudinary";
 
 mongoose
@@ -26,7 +26,7 @@ app.get("/health", async (req: Request, res: Response) => {
 });
 
 app.use("/api/user", UserRoute);
-app.use("/api/my/restaurant", RestaurantRoute);
+app.use("/api/my/restaurant", MyRestaurantRoute);
 
 
 app.listen(3000, () => {
