@@ -4,7 +4,7 @@ import {
   createMyRestaurant,
   getMyRestaurant,
   updateMyRestaurant,
-} from "../controllers/RestaurantController";
+} from "../controllers/MyRestaurantController";
 import { jwtCheck, jwtParse } from "../middleware/auth";
 import { validateMyRestauranRequest } from "../middleware/validation";
 
