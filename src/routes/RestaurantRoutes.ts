@@ -4,7 +4,7 @@ import { searchRestaurant } from "../controllers/RestaurantController";
 
 const router = Router();
 
-// api/restaurant/search/city
+// api/restaurant/search/:city
 router.get(
   "/search/:city",
   param("city")
