@@ -23,7 +23,7 @@ export const jwtParse = async (
   res: Response,
   next: NextFunction
 ) => {
-  console.log("hitting parse middleware")
+  // console.log("hitting parse middleware")
   const { authorization } = req.headers;
   
   if(!authorization) {
